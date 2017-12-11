@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <label class="resgistration">Login</label>
+  <form class="form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <div class="form-group" [ngClass]="displayFieldCss('email')">
+      <div class="col-sm-12">
+        <label for="email" class="control-label required">Email</label>
+        <input type="text" id="email" class="form-control" formControlName="email">
+        <app-field-error-display [displayError]="isFieldValid('email')" errorMsg="Please inter your email">
+        </app-field-error-display>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="displayFieldCss('password')">
+      <div class="col-sm-12">
+        <label for="name" class="control-label required">Password</label>
+        <input type="password" id="password" class="form-control" formControlName="password">
+        <app-field-error-display [displayError]="isFieldValid('password')" errorMsg="Please inform your name">
+        </app-field-error-display>
+      </div>
+    </div>
+    <div class="login-bottom">
+      <button class="btn btn-primary" [disabled]="!form.valid" type="submit">Submit</button>
+      <button class="btn btn-primary" (click)="reset()">Reset</button>
+      <a [routerLink]="['/register']" class="btn btn-primary">Register</a>
+    </div>
+  </form>
+</div>
