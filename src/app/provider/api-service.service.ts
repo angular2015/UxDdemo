@@ -24,6 +24,11 @@ export class ApiServiceService {
             mobile:mobile
         });
     }
+    saveTask(uid, data) { 
+        return this.af.object('task/' + uid).set({
+            data:data
+        });
+    }
     login(email: string, password: string) {
         return this.firebaseAuth
             .auth
@@ -31,7 +36,7 @@ export class ApiServiceService {
     }
 
     logout() {
-        this.firebaseAuth
+       return this.firebaseAuth
             .auth
             .signOut();
     }

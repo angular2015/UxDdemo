@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
         if (this.form.valid) {
             this.LoginService.login(this.form.value.email, this.form.value.password)
                 .then(data => {
-                    this.router.navigate(['home', {uid: data.uid}]);
+                    this.router.navigate(['home']);
                 }).catch((error) => {
                     console.log('2-----', error);
                     alert(error.message)

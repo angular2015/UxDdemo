@@ -1,3 +1,13 @@
-<p>
-  home works!
-</p>
+<div class="w3-sidebar w3-light-grey w3-bar-block">
+    <h3 class="w3-bar-item">Menu</h3>
+    <a class="w3-bar-item w3-button" routerLink="create">Create New Task</a>
+    <a class=" w3-bar-item w3-button" (click)="view()" routerLink="view">ViewTasks</a>
+     <a class=" w3-bar-item w3-button" (click)="logout()">Logout</a>
+</div>
+<div style="margin-left:15% ">
+    <div class="w3-container w3-teal ">
+        <h1>Welcome user</h1>
+    </div>
+</div>
+<router-outlet></router-outlet>
+

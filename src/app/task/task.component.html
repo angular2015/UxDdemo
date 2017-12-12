@@ -1,0 +1,19 @@
+<div class="form-style-6">
+  <h1>Create task</h1>
+
+  <form class="well" (ngSubmit)="createTask(CreateTaskForm.value)" [formGroup]="CreateTaskForm">
+    <div class="form-group" [ngClass]="displayFieldCss('task')">
+      <div class="col-sm-12">
+        <input type="text" id="task" class="form-control" formControlName="task">
+        <app-field-error-display [displayError]="isFieldValid('task')" errorMsg="Please inter your task">
+        </app-field-error-display>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-xs-offset-4 col-xs-4">
+        <my-date-picker name="mydate" [options]="myDatePickerOptions" formControlName="date"></my-date-picker>
+      </div>
+    </div>
+    <button class="btn btn-primary" style="background-color: #009c88 ;  margin: 0 0 0 35%;" [disabled]="!CreateTaskForm.valid" type="submit">Submit</button>
+  </form>
+</div>
